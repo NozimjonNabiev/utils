@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+group = 'com.nozimjon.utils'
+version = '1.3.5'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-tile':'StringUtils Project',
+                'Implementation-version':version
+        )
+    }
+
+    from {
+        sourceSets.main.runtimeClasspath.filter { (it.isDirectory() && it.listFiles().length > 0) || it.isFile() }
+                .collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
