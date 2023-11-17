@@ -27,7 +27,7 @@ test {
 jar {
     manifest {
         attributes(
-                'Implementation-tile':'utils',
+                'Implementation-title':'utils',
                 'Implementation-version':version
         )
     }
