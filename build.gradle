@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
@@ -27,7 +27,7 @@ test {
 jar {
     manifest {
         attributes(
-                'Implementation-title':'utils',
+                'Implementation-tile':'StringUtils Project',
                 'Implementation-version':version
         )
     }
